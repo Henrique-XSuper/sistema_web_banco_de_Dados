@@ -1,0 +1,43 @@
+﻿@model UC_13_Henrique_Webssite.Models.Imovel
+
+@{
+    ViewData["Title"] = "Detalhes do Imóvel";
+}
+
+<h1>Detalhes do Imóvel</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Endereço</dt>
+        <dd class="col-sm-10">@Model.Endereco</dd>
+
+        <dt class="col-sm-2">Cidade</dt>
+        <dd class="col-sm-10">@Model.Cidade</dd>
+
+        <dt class="col-sm-2">Estado</dt>
+        <dd class="col-sm-10">@Model.Estado</dd>
+
+        <dt class="col-sm-2">CEP</dt>
+        <dd class="col-sm-10">@Model.CEP</dd>
+
+        <dt class="col-sm-2">Área</dt>
+        <dd class="col-sm-10">@Model.Area.ToString("N2") m²</dd>
+
+        <dt class="col-sm-2">Imagem do Imóvel</dt>
+        <dd class="col-sm-10">@Model.ImagemUrlimoveis</dd>
+
+        @if (!string.IsNullOrEmpty(Model.ImagemUrlimoveis))
+        {
+            <dt class="col-sm-2">Visualização</dt>
+            <dd class="col-sm-10">
+                <img src="@Model.ImagemUrlimoveis" alt="Imagem do imóvel" style="width: 250px; border-radius: 6px;" />
+            </dd>
+        }
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProdutoId" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+</div>

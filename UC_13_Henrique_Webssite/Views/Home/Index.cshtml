@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Flex Consórcio";
+}
+
+
+<!-- Estilo extra -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    h1, h2, h3 {
+        font-weight: bold;
+    }
+
+    .hero-text {
+        background: #1E90FF;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .product-card {
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    
+</style>
+
+
+
+<!-- Hero Section -->
+<div class="hero-text">
+    <h1>Flex Consórcio</h1>
+    <p class="lead">Transformando seus sonhos em realidade</p>
+</div>
+
+<hr />
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Planeje-se e mude de vida</h3>
+            <p>O Consórcio Flex é o melhor caminho para quem quer se planejar e mudar de vida. É fácil e funciona.</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Segurança e confiança</h3>
+            <p>O Consórcio Flex é uma das maiores administradoras de consórcio do país. Tenha a mesma segurança e qualidade de nossos carros e motos, com quem já ajudou mais de 7 milhões de clientes a realizarem os seus sonhos. E muitos outros vão chegar lá com a gente! E você, vem de Flex?</p>
+        </div>
+    </div>
+</div>
+
+<!-- Carrossel -->
+<div class="carousel">
+    <div class="slides">
+        <div class="slide">
+            <img src="https://th.bing.com/th/id/R.61d0e3e7e1734f44d26b26359c25430f?rik=QqKek30zSkjSEQ&pid=ImgRaw&r=0"
+                 alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="https://wallpapercave.com/wp/wp9073965.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="https://wallpaperaccess.com/full/1126753.jpg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/413284300.jpg?k=8d33e17b4df53b2c7650f5099c6f97076a80a9c10b75080cb72594d4217ece17&o=&hp=1"
+                 alt="Slide 4">
+        </div>
+        <div class="slide">
+            <img src="https://uploads.vrum.com.br/2022/12/b2c7fbc9-renault-kwid-modelo-2023-vermelho-de-frente-em-movimento-no-asfalto.jpg"
+                 alt="Slide 5">
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Lista de Produtos -->
+<div class="container mb-5">
+    <h2 class="mb-4">Produtos em Destaque</h2>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card product-card">
+                <img src="https://www.bing.com/th/id/OIP.JwtzlWEzB1o1QCxEjUmD_AHaE8?w=245&h=211&c=8&rs=1&qlt=70&o=7&cb=thws4&pid=3.1&rm=3" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Carro Popular</h5>
+                    <p class="card-text">A partir de R$ 35.000</p>
+                    <a class="btn btn-primary" asp-controller="Produtoes" asp-action="Cardapio">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card product-card">
+                <img src="	https://th.bing.com/th/id/OIP.vbKcGkPBWE9DyjHgLFZGFgHaE-?w=277&h=185&c=7&r=0&o=7&pid=1.7&rm=3" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Casa dos Sonhos</h5>
+                    <p class="card-text">A partir de R$ 250.000</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <a class="btn btn-primary" asp-controller="imovels" asp-action="Catalogo">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card product-card">
+                <img src="	https://th.bing.com/th/id/OIP.RKGjZmD7ta92GwFUMpNfegHaEK?w=317&h=180&c=7&r=0&o=7&pid=1.7&rm=3" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Moto Esportiva</h5>
+                    <p class="card-text">A partir de R$ 15.000</p>
+                    <a class="btn btn-primary" asp-controller="Produtoes" asp-action="Cardapio">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rodapé -->
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2025 Flex Consórcio - Todos os direitos reservados</p>
+</footer>
+
+
+
+
+
+
+
+
+
+

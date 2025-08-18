@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - UC_13_Henrique_Webssite</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UC_13_Henrique_Webssite.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #0056b3, #00a2ff);
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+            .nav-link:hover {
+                color: #ffdd57 !important;
+            }
+
+        footer {
+            background-color: #222;
+            color: #bbb;
+            padding: 10px 0;
+        }
+
+            footer a {
+                color: #ffdd57;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index3">Simulador</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Produtoes" asp-action="Cardapio">Automóveis</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Imovels" asp-action="Catalogo">Imoveis Flex</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Vendas" asp-action="Index">Vendas</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="VendaProdutos" asp-action="Index">Nota Fiscal</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Fornecedors" asp-action="Index">Fornecedores</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Vendedors" asp-action="Index"> Vendedores</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Produtoes" asp-action="Index"> Produtos</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Imovels" asp-action="Index"> Imóveis</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index1">Login</a></li>
+
+                        <li class="nav-item"><a class="nav-link" asp-controller="Clientes" asp-action="Index">Cliente</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            &copy; 2025 - UC_13_Henrique_Webssite | <a asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

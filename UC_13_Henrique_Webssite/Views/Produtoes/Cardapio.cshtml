@@ -1,0 +1,57 @@
+﻿
+@model IEnumerable<UC_13_Henrique_Webssite.Models.Produto>
+
+@{
+    ViewData["Title"] = "Cardápio de Produtos";
+}
+
+<h2>Cardápio de Produtos</h2>
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Mensagem"]
+    </div>
+}
+
+
+@if (Model != null && Model.Any())
+{
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        @foreach (var item in Model)
+        {
+            <div style="border: 1px solid #ccc; padding: 15px; width: 250px; background-color: #f9f9f9; border-radius: 8px; text-align: center;">
+
+                <!-- Imagem do produto -->
+                <div style="margin-bottom: 10px;">
+                    @if (!string.IsNullOrEmpty(item.ImagemUrl))
+                    {
+                        <img src="@item.ImagemUrl" alt="@item.Nome"
+                             style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" />
+                    }
+                </div>
+
+                <!-- Nome -->
+                <h4 style="margin-bottom: 10px;">@item.Nome</h4>
+
+                <!-- Preço -->
+                <p><strong>Preço:</strong> @item.Preco.ToString("C")</p>
+
+                <!-- Fornecedor -->
+                <p><strong>Fornecedor:</strong> @(item.Fornecedor?.Nome ?? "Não informado")</p>
+
+                <!-- Botão de compra -->
+                <form asp-controller="VendaProdutos" asp-action="AdicionarProduto" method="post">
+                    <input type="hidden" name="produtoId" value="@item.ProdutoId" />
+                    <button type="submit" class="btn btn-success">Comprar</button>
+                </form>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>Nenhum produto disponível no momento.</p>
+}
+
+

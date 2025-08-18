@@ -1,0 +1,30 @@
+﻿@model UC_13_Henrique_Webssite.Models.VendaProdutos
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VendaProdutos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Venda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Venda.VendaId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Produto.ProdutoId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.VendaProdutosId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

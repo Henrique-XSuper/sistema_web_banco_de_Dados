@@ -1,0 +1,237 @@
+﻿
+@{
+}
+<title>Login</title>
+<style>
+
+    nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+    }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+
+
+    /* Mantém os links do nav alinhados à esquerda */
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+        padding: 15px;
+        background-color: #4285F4;
+    }
+
+    /* Centraliza o conteúdo principal */
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Rodapé centralizado */
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #f1f1f1;
+        color: #666;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+
+    /* Card de login */
+
+    .login-container {
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 1.5rem;
+    }
+
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    /* Botão do Google */
+
+    .google-login {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        color: #4285F4;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 1rem 0;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 300px;
+    }
+
+        .google-login:hover {
+            background-color: #f1f1f1;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+    /* Divisor */
+
+    .divider {
+        margin: 1.5rem auto;
+        border-top: 1px solid #eee;
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .divider-text {
+        background-color: white;
+        padding: 0 10px;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #777;
+        font-size: 0.9rem;
+    }
+
+    /* Formulário */
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+            .form-group input:focus {
+                border-color: #4285F4;
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+            }
+
+    /* Botão de login */
+
+    .login-button {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.8rem;
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        transition: background-color 0.3s;
+    }
+
+        .login-button:hover {
+            background-color: #357ABD;
+        }
+
+    /* Rodapé */
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #f1f1f1;
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: 20%;
+    }
+</style>
+
+<main>
+    <div class="login-container">
+
+
+        <h1>Login</h1>
+
+        <a href="#" class="google-login">
+
+            Cadastre-se com uma conta Google
+        </a>
+
+        <div class="divider">
+            <span class="divider-text">ou</span>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="email">Email/Usuário</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email ou usuário" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            </div>
+
+            <p>
+                <a asp-action="Index2" class="btn btn-secondary">Entrar </a>
+            </p>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 Todos os direitos reservados a Flex Consorcio </p>
+</footer>
+

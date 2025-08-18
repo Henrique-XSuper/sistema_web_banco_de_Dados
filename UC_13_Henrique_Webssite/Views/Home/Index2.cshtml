@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "Verificação em duas etapas - Flex Consórcio";
+}
+
+<main>
+    <header>
+        <h1>Verificação em duas etapas</h1>
+        <p>Escolha uma das opções abaixo</p>
+    </header>
+
+    <form action="#" method="post">
+        <div class="method-buttons">
+            <button type="button" class="active" id="btnTelefone">Telefone</button>
+            <button type="button" id="btnEmail">Email</button>
+        </div>
+
+        <div class="code-inputs">
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required />
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required />
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required />
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required />
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required />
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required />
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <a href="#" class="resend-link">Reenviar código</a>
+</main>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    header {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+        }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .method-buttons {
+        display: flex;
+        gap: 20px;
+    }
+
+        .method-buttons button {
+            padding: 12px 28px;
+            border-radius: 8px;
+            border: 2px solid #004f8b;
+            background: transparent;
+            color: #004f8b;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+            .method-buttons button.active,
+            .method-buttons button:hover {
+                background: #0077cc;
+                color: white;
+                border-color: #0077cc;
+            }
+
+    .code-inputs {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 360px;
+    }
+
+        .code-inputs input {
+            width: 50px;
+            height: 60px;
+            font-size: 2.4rem;
+            text-align: center;
+            border: 2px solid #004f8b;
+            border-radius: 12px;
+            outline-offset: 2px;
+            transition: border-color 0.3s;
+        }
+
+            .code-inputs input:focus {
+                border-color: #0077cc;
+                box-shadow: 0 0 6px #0077cc;
+            }
+
+    button[type="submit"] {
+        background-color: #0077cc;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2rem;
+        padding: 14px 60px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 6px 10px rgba(0, 119, 204, 0.35);
+        transition: background-color 0.3s ease;
+        align-self: center;
+        margin-top: 5px;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #005fa3;
+        }
+
+    a.resend-link {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #0077cc;
+        text-decoration: underline;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: color 0.3s;
+    }
+
+        a.resend-link:hover {
+            color: #005fa3;
+        }
+</style>
+
+<script>
+    // Script para alternar botão ativo
+    const btnTelefone = document.getElementById('btnTelefone');
+    const btnEmail = document.getElementById('btnEmail');
+
+    btnTelefone.addEventListener('click', () => {
+        btnTelefone.classList.add('active');
+        btnEmail.classList.remove('active');
+    });
+
+    btnEmail.addEventListener('click', () => {
+        btnEmail.classList.add('active');
+        btnTelefone.classList.remove('active');
+    });
+
+    // Auto-foco nos inputs do código
+    const inputs = document.querySelectorAll('.code-inputs input');
+    inputs.forEach((input, idx) => {
+        input.addEventListener('input', () => {
+            if (input.value.length === 1 && idx < inputs.length - 1) {
+                inputs[idx + 1].focus();
+            }
+        });
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Backspace' && input.value === '' && idx > 0) {
+                inputs[idx - 1].focus();
+            }
+        });
+    });
+</script>
+

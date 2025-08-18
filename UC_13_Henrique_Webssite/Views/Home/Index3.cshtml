@@ -1,0 +1,81 @@
+﻿
+@{
+  
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3 text-center">Simulação de Consórcio</h2>
+
+                    <form id="form-simulador"
+                          oninput="
+                            (function(){
+                              const a = +document.getElementById('a').value || 0;
+                              const b = +document.getElementById('b').value || 0;
+                              const c = +document.getElementById('c').value || 0;
+                              const d = +document.getElementById('d').value || 0;
+                              const e = +document.getElementById('e').value || 1; // evita dividir por 0
+                              const parcela = (a + b + c + d) / e;
+                              document.getElementById('resultado').value = parcela.toFixed(2);
+                            })();
+                          ">
+
+                        <div class="mb-3">
+                            <label for="a" class="form-label">Valor total do bem</label>
+                            <input type="number" step="0.01" min="0" id="a" class="form-control" placeholder="Ex.: 85000">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="b" class="form-label">Valor de crédito</label>
+                            <input type="number" step="0.01" min="0" id="b" class="form-control" placeholder="Ex.: 60000">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="c" class="form-label">Seguro</label>
+                            <input type="number" step="0.01" min="0" id="c" class="form-control" placeholder="Ex.: 1200">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="d" class="form-label">FGTS</label>
+                            <input type="number" step="0.01" min="0" id="d" class="form-control" placeholder="Ex.: 5000">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="e" class="form-label">Número de parcelas</label>
+                            <input type="number" min="1" id="e" class="form-control" placeholder="Ex.: 60">
+                        </div>
+
+                        <div class="alert alert-info mb-0">
+                            <strong>Valor das parcelas:</strong>
+                            R$ <output id="resultado">0.00</output>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <small class="text-muted d-block text-center mt-2">
+                *Cálculo simples: (a + b + c + d) / parcelas.
+            </small>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Estilo escopado para não afetar o restante do layout */
+    #form-simulador .form-label {
+        font-weight: 600;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .card-body {
+        padding: 1.75rem !important;
+    }
+</style>
+
+
