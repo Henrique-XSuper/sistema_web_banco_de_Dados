@@ -5,9 +5,9 @@ O sistema permite o cadastro de usuários, postagem de produtos, simulação de 
 
 ---
  ## Funcionalidades
- ---
  
-### 🏷Cadastro de Produtos
+ 
+## 🏷Cadastro de Produtos
 
 Postagem de produtos como:
 
@@ -31,14 +31,14 @@ Visualização de parcelas mensais e totais.<br>
 
 ---
 
-### 📊 Armazenamento de Dados
+## 📊 Armazenamento de Dados
 
 Utilização de Entity Framework Core para persistência. <br>
 Banco de dados relacional (SQL Server ou SQLite).<br>
 Tabelas para usuários, produtos, planos e simulações.<br>
 
 ---
-### 🛠️ Administração
+## 🛠️ Administração
 
 Painel administrativo para gerenciar produtos e usuários.<br>
 Aprovação ou rejeição de produtos postados.<br>
