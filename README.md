@@ -4,17 +4,16 @@ Este projeto é um sistema web desenvolvido com ASP.NET Core MVC, voltado para g
 O sistema permite o cadastro de usuários, postagem de produtos, simulação de compra e armazenamento de dados em banco de dados.
 
 ---
- ## Funcionalidades
+## Funcionalidades
  
- 
-## 🏷Cadastro de Produtos
+### 🏷Cadastro de Produtos
 
 Postagem de produtos como:
 
 - Carros
 - Casas
-- Itens diversos (eletrodomésticos, terrenos, motos, etc.) <br><br>
-Cada produto contém:<br>
+- Itens diversos (eletrodomésticos, terrenos, motos, etc.) <br> <br>
+  Cada produto contém:<br>
   Nome <br>
   Descrição<br>
   Imagem<br>
@@ -53,3 +52,8 @@ SQL Server / SQLite<br>
 Bootstrap para layout responsivo<br>
 Razor Pages para renderização dinâmica<br>
 Identity para autenticação<br>
+
+---
+📝 Licença 
+-
+Este software está sobre a licença BSD 2.
